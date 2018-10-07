@@ -13,4 +13,6 @@ This system allows the robot to talk to us.Just like "Siri" the robots can talk 
 ![Xunfly](https://raw.githubusercontent.com/NikofoxS/ServiceRobot/master/pictures/xunfly.png)  
 After the robot recognizes our voice.We post the message to [TURING_RoBoT](http://www.tuling123.com/).![TURING_RoBoT](https://raw.githubusercontent.com/NikofoxS/ServiceRobot/master/pictures/TURING_RoBoT.png)If you want to get more information about TURING_RoBoT please click [here](https://www.kancloud.cn/turing/www-tuling123-com/718218).To ensure the speed of speech synthesis.We use [Microsoft Speech SDK 5.1](http://www.microsoft.com/en-us/download/details.aspx?id=10121) to synthesize the information returned by the TURING_RoBoT.Now the robot can talk with us!  
 ## Wheel Robot Arm and Robot Face
-DC motor universal wheels is used for the moving module of the robot.STC89C52
+DC motor universal wheels is used for the moving module of the robot.We use STC89C52![STC89C52](https://raw.githubusercontent.com/NikofoxS/ServiceRobot/master/pictures/stc89c52.png) as the underlying driver
+
+[MX-106](http://support.robotis.com/en/product/actuator/dynamixel/mx_series/mx-106.htm)
