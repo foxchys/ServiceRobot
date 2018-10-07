@@ -1,0 +1,99 @@
+C51 COMPILER V9.01   MOTOR                                                                 04/28/2017 10:52:10 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MOTOR
+OBJECT MODULE PLACED IN motor.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE motor.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h> 
+   2          #include<intrins.h>  
+   3          #define uchar unsigned char 
+   4          #define uint unsigned int 
+   5          sbit Left_P=P1^0; 
+   6          sbit Left_D=P1^1;
+   7          sbit Right_P=P1^2;  
+   8          sbit Right_D=P1^3;
+   9          uchar pwm,speed=10,SerialValue=0;   //串口接收到的值; 
+  10          void delaynus(uchar n)
+  11          {
+  12   1              uchar i;
+  13   1              for(i=0;i<n;i++);
+  14   1      }
+  15          void Init()
+  16          {
+  17   1              TMOD=0x21;      //设定定时器为方式2 可自动再装入的定时器  
+  18   1              SM0=0;          //设定串口工作方式1 10位异步收发器  8位数据  
+  19   1              SM1=1;          //设定串口工作方式1 10位异步收发器  8位数据    
+  20   1              REN=1;          //允许串行接收位。REN=1，启动接收数据；REN=0，禁止接收。  
+  21   1              IP=0x10;  
+  22   1              TH0=(65536-100)/256;  
+  23   1              TL0=(65536-100)%256;
+  24   1              TH1=0xfd;       //装入初值  
+  25   1              TL1=0xfd;       //装入初值
+  26   1              TR0=1;          //启用T0定时器/计数器  
+  27   1              ET0=1;          //T0定时器中断开关；(开)   
+  28   1              TR1=1;          //启用T1定时器/计数器  
+  29   1              ET1=1;          //T1定时器中断开关；(开)  
+  30   1              ES=1;           //串行中断开关；(开)    
+  31   1      }
+  32          void main() 
+  33          {  
+  34   1              P1=0x00;
+  35   1              Init();
+  36   1              EA=1;
+  37   1              while(1)  
+  38   1              { 
+  39   2                      if(pwm<speed)
+  40   2                      {
+  41   3                              switch(SerialValue)
+  42   3                              {
+  43   4                              case 0:{P1=0x00;break;} //停止0000
+  44   4                              case 1:{P1=0x05;break;} //前进0101
+  45   4                              case 2:{P1=0x0a;break;} //后退1010
+  46   4                              case 3:{P1=0x09;break;} //左转1001
+  47   4                              case 4:{P1=0x06;break;} //右转0110
+  48   4                              default:break;
+  49   4                              }
+  50   3                              delaynus(2);
+  51   3                              speed--;
+  52   3                              if(speed<10)speed=10;
+  53   3                      }
+  54   2                      else P1=0x00;
+  55   2                                      
+C51 COMPILER V9.01   MOTOR                                                                 04/28/2017 10:52:10 PAGE 2   
+
+  56   2              } 
+  57   1      }
+  58          
+  59          void serial() interrupt 4 
+  60          {  
+  61   1              if(RI)
+  62   1              {
+  63   2              SerialValue=SBUF;
+  64   2              speed=30;    
+  65   2              RI=0;
+  66   2              }  
+  67   1      }   
+  68          void timer0() interrupt 1 
+  69          {   
+  70   1              TH0=(65536-100)/256;  
+  71   1              TL0=(65536-100)%256;  
+  72   1              pwm++; 
+  73   1              if(pwm>100)pwm=0;     
+  74   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    165    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

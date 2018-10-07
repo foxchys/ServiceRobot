@@ -1,0 +1,181 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/28/2017  10:52:10  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE motor.obj TO motor RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  motor.obj (MOTOR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  motor (MOTOR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?MOTOR
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0007H     UNIT         ?C_INITSEG
+                    000AH     0001H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     000CH     UNIT         ?PR?SERIAL?MOTOR
+                    001AH     0009H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     008CH     UNIT         ?C_C51STARTUP
+            CODE    00B2H     0050H     UNIT         ?PR?MAIN?MOTOR
+            CODE    0102H     0023H     UNIT         ?PR?INIT?MOTOR
+            CODE    0125H     001BH     UNIT         ?PR?TIMER0?MOTOR
+            CODE    0140H     000BH     UNIT         ?PR?_DELAYNUS?MOTOR
+
+
+
+OVERLAY MAP OF MODULE:   motor (MOTOR)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MOTOR
+  +--> ?C_INITSEG
+
+?PR?MAIN?MOTOR
+  +--> ?PR?INIT?MOTOR
+  +--> ?PR?_DELAYNUS?MOTOR
+
+
+
+SYMBOL TABLE OF MODULE:  motor (MOTOR)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/28/2017  10:52:10  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MOTOR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:000EH         PUBLIC        serial
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:0008H         PUBLIC        speed
+  C:0102H         PUBLIC        Init
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  C:00B2H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  B:0098H.7       PUBLIC        SM0
+  D:008AH         PUBLIC        TL0
+  B:0098H.6       PUBLIC        SM1
+  D:008BH         PUBLIC        TL1
+  C:0125H         PUBLIC        timer0
+  D:0009H         PUBLIC        pwm
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  D:000AH         PUBLIC        SerialValue
+  B:0098H.4       PUBLIC        REN
+  D:00C8H         PUBLIC        T2CON
+  C:0140H         PUBLIC        _delaynus
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAYNUS
+  D:0007H         SYMBOL        n
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0140H         LINE#         10
+  C:0140H         LINE#         11
+  C:0140H         LINE#         13
+  C:014AH         LINE#         14
+  -------         ENDPROC       _DELAYNUS
+  -------         PROC          INIT
+  C:0102H         LINE#         15
+  C:0102H         LINE#         16
+  C:0102H         LINE#         17
+  C:0105H         LINE#         18
+  C:0107H         LINE#         19
+  C:0109H         LINE#         20
+  C:010BH         LINE#         21
+  C:010EH         LINE#         22
+  C:0111H         LINE#         23
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/28/2017  10:52:10  PAGE 3
+
+
+  C:0114H         LINE#         24
+  C:0117H         LINE#         25
+  C:011AH         LINE#         26
+  C:011CH         LINE#         27
+  C:011EH         LINE#         28
+  C:0120H         LINE#         29
+  C:0122H         LINE#         30
+  C:0124H         LINE#         31
+  -------         ENDPROC       INIT
+  -------         PROC          MAIN
+  C:00B2H         LINE#         32
+  C:00B2H         LINE#         33
+  C:00B2H         LINE#         34
+  C:00B5H         LINE#         35
+  C:00B8H         LINE#         36
+  C:00BAH         LINE#         37
+  C:00BAH         LINE#         38
+  C:00BAH         LINE#         39
+  C:00C1H         LINE#         40
+  C:00C1H         LINE#         41
+  C:00D3H         LINE#         42
+  C:00D3H         LINE#         43
+  C:00D8H         LINE#         44
+  C:00DDH         LINE#         45
+  C:00E2H         LINE#         46
+  C:00E7H         LINE#         47
+  C:00EAH         LINE#         48
+  C:00EAH         LINE#         49
+  C:00EAH         LINE#         50
+  C:00EFH         LINE#         51
+  C:00F1H         LINE#         52
+  C:00FBH         LINE#         53
+  C:00FDH         LINE#         54
+  C:0100H         LINE#         56
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL
+  C:000EH         LINE#         59
+  C:000EH         LINE#         61
+  C:0011H         LINE#         62
+  C:0011H         LINE#         63
+  C:0014H         LINE#         64
+  C:0017H         LINE#         65
+  C:0019H         LINE#         66
+  C:0019H         LINE#         67
+  -------         ENDPROC       SERIAL
+  -------         PROC          TIMER0
+  C:0125H         LINE#         68
+  C:0129H         LINE#         70
+  C:012CH         LINE#         71
+  C:012FH         LINE#         72
+  C:0131H         LINE#         73
+  C:013BH         LINE#         74
+  -------         ENDPROC       TIMER0
+  -------         ENDMOD        MOTOR
+
+Program Size: data=12.0 xdata=0 code=321
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
