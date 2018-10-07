@@ -18,7 +18,7 @@ DC motor universal wheels is used for the moving module of the robot.We use STC8
 ##  Other Library
 We haved used many librarys in this project.We used [libcurl](https://curl.haxx.se/libcurl/) and [JsonCpp](https://github.com/open-source-parsers/jsoncpp.git) for network communications.  
 ## Review and summarize
-This project was written when I first learned C++.There are a lot of inaccuracies at the code.After a long time I uploaded the project to github.This project can be a start for me to learn C++.My senior fellow apprentice Xujie Li gave me great help.I can't finsh this project without him.If you have questions about my code please contact me.  
+This project was written when I first learned C++.There are a lot of inaccuracies at the code.After a long time I uploaded the project to github.This project can be a start for me to learn C++.My senior fellow apprentice XuJ. Lee gave me great help.I can't finsh this project without him.If you have questions about my code please contact me.  
 
 
 
