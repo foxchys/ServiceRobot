@@ -1,0 +1,19 @@
+﻿  stdafx.cpp
+  XunFlySpecre.cpp
+  SrobotDlg.cpp
+  Srobot.cpp
+  SerialPort.cpp
+  OrderSearch.cpp
+  NetCurl.cpp
+e:\srobot1.0\srobot\netcurl.cpp(1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  e:\srobot1.0\srobot\netcurl.cpp(1): note: command-line arguments:  see previous definition of '_CRT_SECURE_NO_WARNINGS'
+e:\srobot1.0\srobot\netcurl.cpp(1): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
+  e:\srobot1.0\srobot\netcurl.cpp(1): note: Add macro to precompiled header instead of defining here
+  e:\srobot1.0\srobot\netcurl.cpp(2): note: use of precompiled header
+  ManageSetDlg.cpp
+  Generating Code...
+json_vc71_libmtd.lib(json_reader.obj) : warning LNK4099: PDB 'lib_json.pdb' was not found with 'json_vc71_libmtd.lib(json_reader.obj)' or at 'E:\Srobot1.0\Debug\lib_json.pdb'; linking object as if no debug info
+json_vc71_libmtd.lib(json_value.obj) : warning LNK4099: PDB 'lib_json.pdb' was not found with 'json_vc71_libmtd.lib(json_value.obj)' or at 'E:\Srobot1.0\Debug\lib_json.pdb'; linking object as if no debug info
+json_vc71_libmtd.lib(json_writer.obj) : warning LNK4099: PDB 'lib_json.pdb' was not found with 'json_vc71_libmtd.lib(json_writer.obj)' or at 'E:\Srobot1.0\Debug\lib_json.pdb'; linking object as if no debug info
+  Srobot.vcxproj -> E:\Srobot1.0\Debug\Srobot.exe
+  Srobot.vcxproj -> E:\Srobot1.0\Debug\Srobot.pdb (Partial PDB)

@@ -1,0 +1,7 @@
+API地址:http://www.tuling123.com/openapi/api
+APIkey:3969751f9a0141cf8734e5b3d7b0ca65
+userid = "174527";
+
+
+编码方式
+UTF-8（调用图灵API的各个环节的编码方式均为UTF-8）
