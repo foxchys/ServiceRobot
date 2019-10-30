@@ -1,6 +1,6 @@
 # ServiceRobot
 
-The project was designed for a service robot systerm。  
+The project was designed for a service robot。  
 ## UI
 Here's the user interface.The main project at the file "Srobot1.0".From the interface we can see that the robot can talk with us , face recognition and simple action performance.
 ![UI1](https://raw.githubusercontent.com/NikofoxS/ServiceRobot/master/pictures/ui1.png)  
